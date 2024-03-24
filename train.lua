@@ -212,7 +212,10 @@ for i = start_i + 1, num_iterations do
       val_loss = val_loss + crit:forward(scores, yv)
     end
     val_loss = val_loss / num_val
+    val_loss = val_loss / num_val
+    local val_perplexity = torch.exp(val_loss)
     print('val_loss = ', val_loss)
+    print(string.format('val_perplexity = %f',val_perplexity))
     table.insert(val_loss_history, val_loss)
     table.insert(val_loss_history_it, i)
     model:resetStates()

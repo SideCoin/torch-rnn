@@ -1,13 +1,5 @@
 # torch-rnn
-torch-rnn provides high-performance, reusable RNN and LSTM modules for torch7, and uses these modules for character-level
-language modeling similar to [char-rnn](https://github.com/karpathy/char-rnn).
-
-You can find documentation for the RNN and LSTM modules [here](doc/modules.md); they have no dependencies other than `torch`
-and `nn`, so they should be easy to integrate into existing projects.
-
-Compared to char-rnn, torch-rnn is up to **1.9x faster** and uses up to **7x less memory**. For more details see 
-the [Benchmark](#benchmarks) section below.
-
+This project is forked from [Justin Johnson](https://github.com/jcjohnson/torch-rnn) with a small tweak to include perplexity information. 
 
 # Installation
 
@@ -15,6 +7,7 @@ the [Benchmark](#benchmarks) section below.
 Cristian Baldi has prepared Docker images for both CPU-only mode and GPU mode;
 you can [find them here](https://github.com/crisbal/docker-torch-rnn).
 
+You would need to install Nvidia Container Toolkit and Docker to be able to use this. Make sure to replace `train.lua` from the Docker image with the one from this repo. 
 ## System setup
 You'll need to install the header files for Python 2.7 and the HDF5 library. On Ubuntu you should be able to install
 like this:
